@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <!-- <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link href="/measure/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .col-md-12{
+      width: 305px;
+      border:thick double grey;
+      padding-top:15px ;
+    }
+
+    #output{
+      /*padding-bottom: 50px;*/
+      margin-top: 15px;
+    }
+    /*#show{*/
+    /*	border: 1px solid;*/
+    /*}*/
+    .input-set{
+      border: inset 2px #ccc;
+      height:22px;
+      width:65px;
+      vertical-align:middle;
+      text-align: center;
+      line-height:22px;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+
+  </style>
+</head>
+
+<body>
+<div id="tittle" class="container-fluid">
+  <div class="row-fluid">
+    <div class="span12">
+      <div class="page-header">
+        <h1>
+          测量软件
+        </h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      <div id="input" class="col-md-12">
+        <p>
+          <span style="float: left" for="uploadIMG" >加载图片：</span>
+          <br/>
+          <input  type="file" id="uploadIMG" style="padding-left: 70px"/>
+        </p>
+
+
+        <p id = "select_position">选择方位：
+          <label><input type="radio" name="position" value="frontal" class="select-set">正位</label>
+          <span style="margin-left: 10px">
+						<label><input type="radio" name="position" value="lateral" class="select-set">侧位</label>
+					</span>
+        </p>
+        <!-- <p>选择模型：
+            <label><input id="femur" type="radio" name="shape" value="femur" checked>股骨</label>
+            <label><input id="tibia" type="radio" name="shape" value="tibia">胫腓骨</label>
+        </p> -->
+      </div>
+      <div id="output" class="col-md-12">
+        <!-- <p>
+            <button type="button" id="intersection">寻找交叉点</button>
+        </p> -->
+
+        <p>
+          实际直径<input type="text" id="actual_radium" class="input-set"/>
+          mm
+        </p>
+        <p><span id="direction"></span>方向：
+          <label><input id="zheng" type="radio" name="select" class="select-set" checked>X轴正向</label>
+          <span style="margin-left: 10px">
+					<label><input id="fu" type="radio" name="select" class="select-set">X轴负向</label>
+					</span>
+        </p>
+        <p>
+          <button type="button" id="enter">计算</button>
+        </p>
+        <p>
+          <span name="choice" ></span>位移
+          <span id="direct_zheng" ></span>
+          <input type="text" id="dist_zheng" class="input-set"/>mm
+        </p>
+        <p>
+          <span name="choice" ></span>角度
+          <span id="angle_sign" ></span>
+          <input type="text" id="angle_zheng" class="input-set"/>&deg
+        </p>
+        <p>
+          轴向位移
+          <span id="direct_zhou" ></span>
+          <input type="text" id="dist_zhou" class="input-set"/>mm
+        </p>
+        <p>
+          参考环中心<span name="choice" ></span>偏移
+          <span id="direct_huan_zheng" ></span>
+          <input  type="text" id="dist_huan_zheng" class="input-set"/>mm
+        </p>
+        <p>
+          参考环中心轴向偏移<input  type="text" id="dist_huan_zhou" class="input-set"/>mm
+        </p>
+      </div>
+    </div>
+    <div id="show" class="col-md-8">
+      <canvas id="can" width="500" height="500"></canvas>
+    </div>
+  </div>
+</div>
+
+
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="/measure/jquery.min.js"></script>
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="/measure/bootstrap.min.js"></script>
+
+<script src="/measure/fabric.min.js"></script>
+<script src="/measure/app.bundle.js"></script>
+
+</body>
+
+</html>
