@@ -15,7 +15,7 @@ public class Controller {
      * username password
      * @return
      */
-    @PostMapping("/index.html/bone/userlogin")
+    @PostMapping("/index.html/bone/user/login")
     @ResponseBody
     public String login(){
         return "{\n" +
